@@ -1,0 +1,11 @@
+@use 'vendor';
+@use 'vars';
+@use 'mixins';
+@use 'fonts';
+@use 'global';
+
+/* COMPONENTS */
+@use './components/helpers';
+
+/* SECTIONS */
+@use './sections/main';

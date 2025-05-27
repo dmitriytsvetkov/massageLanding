@@ -1,0 +1,14 @@
+@use '@/styles/mixins';
+
+:root {
+    --font-family: 'Onest', sans-serif;
+    --content-width: 1344px;
+    --container-offset: 12px;
+    --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+    /* colors */
+
+    @include mixins.desktop {
+        --container-offset: 42px;
+    }
+}

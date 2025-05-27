@@ -1,0 +1,88 @@
+@use '@/styles/mixins';
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth;
+
+    box-sizing: border-box;
+    height: 100%;
+
+    font-family: var(--font-family);
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+}
+
+body {
+    color: var(--black-black);
+
+    background-color: var(--grey-grey-100);
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+
+    height: auto;
+
+    border-style: none;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+
+    background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin: 0;
+
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--container-offset);
+
+    @include mixins.desktop-1440 {
+        max-width: 1344px;
+        padding: 0;
+    }
+}
