@@ -1,12 +1,19 @@
 @use '@/styles/mixins';
 
 :root {
-    --font-family: 'Onest', sans-serif;
-    --content-width: 1344px;
-    --container-offset: 12px;
+    --font-family: 'Wix Madefor Display', sans-serif;
+    --content-width: 1200px;
+    --container-offset: 16px;
     --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
 
-    /* colors */
+    --text: #313131;
+
+    --text-icons-primary: #353e6c;
+    --color-violet: #8f3fba;
+
+    @include mixins.pre-tablet {
+        --container-offset: 32px;
+    }
 
     @include mixins.desktop {
         --container-offset: 42px;

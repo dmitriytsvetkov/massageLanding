@@ -6,6 +6,10 @@
 
 /* COMPONENTS */
 @use './components/helpers';
+@use './components/burger';
+@use './components/overlay';
+@use './components/btn';
 
 /* SECTIONS */
+@use './components/header';
 @use './sections/main';

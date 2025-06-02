@@ -1,0 +1,243 @@
+@use '@/styles/mixins';
+
+.burger {
+    position: relative;
+
+    width: 20px;
+    height: 16px;
+    padding: 0;
+
+    border: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &__line {
+        position: absolute;
+        top: 50%;
+        left: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background-color: var(--text-icons-primary);
+
+        transition: opacity 0.3s ease-in-out;
+
+        transform: translateY(-50%);
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 2px;
+
+        background-color: var(--text-icons-primary);
+
+        transition:
+            transform 0.2s ease-in-out,
+            top 0.2s ease-in-out,
+            bottom 0.2s ease-in-out;
+
+        content: '';
+    }
+
+    &::before {
+        top: 0;
+    }
+
+    &::after {
+        bottom: 0;
+    }
+
+    &._active &__line {
+        opacity: 0;
+    }
+
+    &._active::before {
+        top: 50%;
+
+        transform: rotate(45deg);
+    }
+
+    &._active::after {
+        top: 50%;
+        bottom: auto;
+
+        transform: rotate(-45deg);
+    }
+
+    &__content {
+        position: absolute;
+        z-index: 99999;
+        top: 96px;
+        left: 0;
+
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 24px;
+
+        width: 100%;
+        min-height: calc(100vh - 96px);
+        padding-top: 8px;
+        overflow: hidden;
+
+        border-bottom-right-radius: 24px;
+        border-bottom-left-radius: 24px;
+
+        background-color: white;
+
+        @include mixins.pre-tablet {
+            top: 98px;
+
+            min-height: auto;
+            padding-top: 0;
+        }
+
+        @include mixins.desktop {
+            top: 114px;
+
+            padding-top: 0;
+
+            border-bottom-right-radius: unset;
+            border-bottom-left-radius: unset;
+        }
+    }
+
+    &__content._visible {
+        display: flex;
+    }
+
+    &__btn._tablet {
+        display: none;
+
+        @include mixins.pre-tablet {
+            display: block;
+        }
+    }
+
+    &__btn._mobile {
+        display: block;
+
+        @include mixins.pre-tablet {
+            display: none;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 32px 0;
+
+        background-color: var(--color-violet);
+
+        @include mixins.desktop-1200 {
+            padding: 16px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 24px;
+
+        @include mixins.pre-tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px 44px;
+
+            max-width: 616px;
+        }
+
+        @include mixins.desktop-1200 {
+            max-width: unset;
+        }
+    }
+
+    &__link {
+        @include mixins.text-t2;
+
+        color: white;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        padding: 0 16px;
+
+        @include mixins.pre-tablet {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 0 32px;
+        }
+
+        @include mixins.desktop {
+            display: none;
+        }
+    }
+
+    &__phone-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__info-text {
+        @include mixins.text-mob;
+
+        color: var(--text);
+
+        @include mixins.pre-tablet {
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include mixins.pre-tablet {
+            gap: 24px;
+            order: 1;
+        }
+    }
+
+    &__phone {
+        @include mixins.mob-title-2;
+
+        text-align: center;
+
+        color: var(--text);
+
+        @include mixins.pre-tablet {
+            font-size: 24px;
+            font-weight: 500;
+        }
+    }
+
+    @include mixins.desktop-1200 {
+        display: none;
+    }
+}

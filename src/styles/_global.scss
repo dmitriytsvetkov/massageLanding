@@ -80,9 +80,4 @@ strong {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--container-offset);
-
-    @include mixins.desktop-1440 {
-        max-width: 1344px;
-        padding: 0;
-    }
 }

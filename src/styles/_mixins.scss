@@ -1,11 +1,11 @@
-@mixin mobile {
-    @media (min-width: 360px) {
+@mixin pre-tablet {
+    @media (min-width: 667px) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: 1200px) {
+    @media (min-width: 1024px) {
         @content;
     }
 }
@@ -16,8 +16,32 @@
     }
 }
 
-@mixin desktop-1920 {
-    @media (min-width: 1920px) {
+@mixin desktop-1200 {
+    @media (min-width: 1200px) {
         @content;
     }
+}
+
+@mixin text-t2 {
+    font-family: 'Wix Madefor Display', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0%;
+}
+
+@mixin text-mob {
+    font-family: 'Wix Madefor Text', Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0%;
+}
+
+@mixin mob-title-2 {
+    font-family: 'Wix Madefor Display', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: 0%;
 }
