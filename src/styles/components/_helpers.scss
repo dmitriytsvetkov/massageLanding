@@ -13,3 +13,11 @@
 
     border: 0;
 }
+
+._hide-on-desktop {
+    display: block;
+
+    @include mixins.desktop {
+        display: none;
+    }
+}

@@ -11,5 +11,6 @@
 @use './components/btn';
 
 /* SECTIONS */
-@use './components/header';
+@use './sections/header';
+@use './sections/footer';
 @use './sections/main';
