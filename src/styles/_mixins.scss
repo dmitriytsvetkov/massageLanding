@@ -4,6 +4,12 @@
     }
 }
 
+@mixin tablet {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
 @mixin desktop {
     @media (min-width: 1024px) {
         @content;
@@ -44,4 +50,11 @@
     font-weight: 600;
     line-height: 26px;
     letter-spacing: 0%;
+}
+
+@mixin mob-title {
+    font-family: 'Wix Madefor Display', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
 }
