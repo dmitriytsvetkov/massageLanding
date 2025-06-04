@@ -1,0 +1,94 @@
+@use '@/styles/mixins';
+
+.disclaimer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    &__container {
+        padding: 16px;
+
+        border-radius: 24px;
+
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+            url('@/assets/img/disclaimer-bg.jpg');
+        background-position: center;
+
+        background-size: 1272px 475px;
+        background-repeat: no-repeat;
+
+        @include mixins.pre-tablet {
+            padding: 59px 21px;
+
+            background-position: 50% 100%;
+        }
+
+        @include mixins.tablet {
+            padding: 69.5px 32px;
+
+            background-position: left center;
+        }
+
+        @include mixins.desktop {
+            max-width: 1200px;
+            padding: 90.5px 32px;
+
+            background-position: 50% 100%;
+            background-size: cover;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        padding: 16px;
+
+        border-radius: 24px;
+
+        background-color: white;
+
+        @include mixins.pre-tablet {
+            min-height: 191px;
+        }
+
+        @include mixins.tablet {
+            min-height: 336px;
+        }
+    }
+
+    &__icon {
+        width: 64px;
+        height: 64px;
+
+        @include mixins.tablet {
+            width: 110px;
+            height: 110px;
+        }
+    }
+
+    &__text {
+        font-size: 20px;
+        line-height: 26px;
+        text-align: center;
+        color: var(--text);
+
+        @include mixins.tablet {
+            font-size: 34px;
+            line-height: 46px;
+        }
+    }
+
+    @include mixins.pre-tablet {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    @include mixins.tablet {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+}
