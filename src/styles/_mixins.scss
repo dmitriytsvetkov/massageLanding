@@ -58,3 +58,10 @@
     font-weight: 700;
     line-height: 30px;
 }
+
+@mixin h1-mob {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+}
