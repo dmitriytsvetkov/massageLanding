@@ -16,8 +16,4 @@
     @include mixins.tablet {
         --container-offset: 32px;
     }
-
-    @include mixins.desktop {
-        --container-offset: 42px;
-    }
 }
