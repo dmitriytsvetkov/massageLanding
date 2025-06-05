@@ -3,4 +3,8 @@
 .main {
     display: flex;
     flex-direction: column;
+
+    @include mixins.desktop-1200 {
+        padding-top: 58px;
+    }
 }

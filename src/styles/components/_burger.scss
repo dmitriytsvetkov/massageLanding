@@ -107,6 +107,10 @@
             border-bottom-right-radius: unset;
             border-bottom-left-radius: unset;
         }
+
+        @include mixins.desktop-1200 {
+            display: block;
+        }
     }
 
     &__content._visible {
