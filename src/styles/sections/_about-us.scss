@@ -85,8 +85,6 @@
     &__title {
         @include mixins.mob-title;
 
-        color: var(--text);
-
         @include mixins.pre-tablet {
             font-size: 25px;
         }
@@ -99,8 +97,6 @@
 
     &__text {
         @include mixins.text-mob;
-
-        color: var(--text);
 
         @include mixins.tablet {
             font-size: 22px;
@@ -168,8 +164,6 @@
 
     &__feature-text {
         @include mixins.text-mob;
-
-        color: var(--text);
 
         @include mixins.tablet {
             font-size: 22px;

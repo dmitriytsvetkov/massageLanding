@@ -17,8 +17,6 @@
     &__title {
         @include mixins.mob-title;
 
-        color: var(--text);
-
         @include mixins.pre-tablet {
             text-align: center;
         }

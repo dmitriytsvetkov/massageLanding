@@ -209,8 +209,6 @@
     &__info-text {
         @include mixins.text-mob;
 
-        color: var(--text);
-
         @include mixins.pre-tablet {
             font-size: 20px;
             font-weight: 400;
