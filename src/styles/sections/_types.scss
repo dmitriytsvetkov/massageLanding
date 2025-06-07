@@ -1,0 +1,256 @@
+@use '@/styles/mixins';
+
+.types {
+    background-image: url('@/assets/img/types-bg-360.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        padding-top: 95px;
+        padding-bottom: 95px;
+
+        @include mixins.pre-tablet {
+            padding-top: 172px;
+            padding-bottom: 172px;
+        }
+
+        @include mixins.tablet {
+            gap: 44px;
+
+            padding-top: 160px;
+            padding-bottom: 236px;
+        }
+
+        @include mixins.desktop {
+            padding-top: 221px;
+            padding-bottom: 221px;
+        }
+    }
+
+    &__title {
+        @include mixins.mob-title;
+
+        text-align: center;
+
+        color: white;
+
+        @include mixins.pre-tablet {
+            @include mixins.h1-mob;
+        }
+
+        @include mixins.tablet {
+            font-size: 38px;
+            line-height: 46px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        @include mixins.pre-tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @include mixins.tablet {
+            display: flex;
+            gap: 24px;
+        }
+
+        @include mixins.desktop {
+            display: grid;
+        }
+    }
+
+    &__img-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        min-height: 396px;
+
+        img {
+            height: 396px;
+
+            border-radius: 24px;
+
+            @include mixins.pre-tablet {
+                height: 236px;
+            }
+
+            @include mixins.tablet {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        @include mixins.pre-tablet {
+            min-height: 236px;
+        }
+
+        @include mixins.tablet {
+            width: 243px;
+            height: 243px;
+        }
+
+        @include mixins.desktop {
+            width: 100%;
+            height: 364px;
+        }
+
+        @include mixins.desktop-1200 {
+            height: 449px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 16px;
+
+        border-radius: 24px;
+
+        background-color: white;
+
+        @include mixins.pre-tablet {
+            gap: 13px;
+
+            padding: 10px;
+        }
+
+        @include mixins.tablet {
+            flex-direction: row;
+
+            padding: 16px;
+        }
+
+        @include mixins.desktop {
+            flex-direction: column;
+        }
+
+        @include mixins.desktop-1200 {
+            gap: 20px;
+
+            padding: 24px;
+        }
+    }
+
+    &__item:nth-child(2) {
+        @include mixins.tablet {
+            order: -1;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include mixins.pre-tablet {
+            gap: 10px;
+        }
+
+        @include mixins.tablet {
+            flex: 1;
+            gap: 16px;
+        }
+    }
+
+    &__name {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+
+        @include mixins.pre-tablet {
+            font-size: 13px;
+            line-height: 17px;
+        }
+
+        @include mixins.tablet {
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+
+    &__text {
+        display: -webkit-box;
+
+        overflow: hidden;
+
+        font-family: 'Inter', Arial, sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+
+        transition: max-height 0.3s ease;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+
+        @include mixins.pre-tablet {
+            font-size: 11px;
+            line-height: 13px;
+        }
+
+        @include mixins.tablet {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__item._expanded &__text {
+        display: block;
+        -webkit-line-clamp: none;
+
+        max-height: none;
+    }
+
+    &__toggle-btn {
+        margin: 0;
+        padding: 0;
+
+        border: none;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+
+        text-align: left;
+        color: #999;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        @include mixins.pre-tablet {
+            font-size: 11px;
+            line-height: 13px;
+        }
+
+        @include mixins.tablet {
+            margin-top: auto;
+
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    @include mixins.pre-tablet {
+        background-image: url('@/assets/img/types-bg-667.svg');
+    }
+
+    @include mixins.tablet {
+        background-image: url('@/assets/img/types-bg-768.svg');
+    }
+
+    @include mixins.desktop {
+        background-image: url('@/assets/img/types-bg-1024.svg');
+    }
+}
