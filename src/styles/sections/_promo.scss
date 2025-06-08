@@ -1,0 +1,44 @@
+@use '@/styles/mixins';
+
+.promo {
+    padding-top: 60px;
+
+    &__title {
+        @include mixins.mob-title;
+
+        margin-bottom: 32px;
+
+        text-align: center;
+
+        @include mixins.pre-tablet {
+            font-size: 25px;
+            line-height: 30px;
+        }
+
+        @include mixins.tablet {
+            padding-left: 32px;
+
+            font-size: 38px;
+            line-height: 46px;
+            text-align: left;
+        }
+
+        @include mixins.desktop {
+            margin-bottom: 44px;
+        }
+
+        @include mixins.desktop-1200 {
+            margin-bottom: 60px;
+            padding-left: 0;
+        }
+    }
+
+    @include mixins.tablet {
+        padding-bottom: 60px;
+    }
+
+    @include mixins.desktop-1200 {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}

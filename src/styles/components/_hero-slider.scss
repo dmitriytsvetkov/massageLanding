@@ -1,6 +1,6 @@
 @use '@/styles/mixins';
 
-.slider {
+.hero-slider {
     &__item {
         display: flex !important;
         align-items: center;
@@ -130,7 +130,7 @@
     &__btn-next {
         display: none !important;
 
-        @include mixins.desktop-1200 {
+        @include mixins.desktop-1600 {
             display: flex !important;
 
             width: 56px !important;
@@ -149,13 +149,13 @@
     }
 
     &__btn-prev {
-        @include mixins.desktop-1200 {
+        @include mixins.desktop-1600 {
             left: 136px !important;
         }
     }
 
     &__btn-next {
-        @include mixins.desktop-1200 {
+        @include mixins.desktop-1600 {
             right: 136px !important;
         }
     }

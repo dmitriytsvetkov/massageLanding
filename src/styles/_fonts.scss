@@ -87,3 +87,13 @@
         url('/fonts/WixMadeforText-Bold.woff') format('woff');
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Great Vibes';
+    font-weight: normal;
+    font-style: normal;
+    src:
+        url('/fonts/GreatVibes-Regular.woff2') format('woff2'),
+        url('/fonts/GreatVibes-Regular.woff') format('woff');
+    font-display: swap;
+}

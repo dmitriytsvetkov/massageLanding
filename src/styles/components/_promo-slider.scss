@@ -1,0 +1,220 @@
+@use '@/styles/mixins';
+
+.promo-slider {
+    position: relative;
+
+    padding: 0 16px 20px !important;
+
+    &__item {
+        display: flex !important;
+        align-items: center;
+
+        border-radius: 24px;
+
+        color: white;
+
+        background-color: #00000052;
+
+        background-position: center center;
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-blend-mode: darken;
+    }
+
+    &__item._first {
+        background-image: url('@/assets/img/hero-slider-bg-5.jpg');
+    }
+
+    &__item._second {
+        background-image: url('@/assets/img/studio-6.jpg');
+    }
+
+    &__item._third {
+        background-image: url('@/assets/img/studio-7.jpg');
+    }
+
+    &__item._fourth {
+        background-image: url('@/assets/img/hero-slider-bg-2.jpg');
+    }
+
+    &__item-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 100%;
+        min-height: 772px;
+        padding: 24px 16px;
+
+        @include mixins.pre-tablet {
+            min-height: 456px;
+        }
+
+        @include mixins.tablet {
+            min-height: 704px;
+        }
+
+        @include mixins.desktop {
+            min-height: 636px;
+            padding: 24px;
+        }
+
+        @include mixins.desktop-1200 {
+            min-height: 606px;
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__middle-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        @include mixins.desktop {
+            gap: 24px;
+        }
+    }
+
+    &__hint {
+        padding: 6px 16px;
+
+        border-radius: 37px;
+
+        font-family: 'Wix Madefor Text', Arial, sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        line-height: 16px;
+        color: var(--text);
+
+        background-color: white;
+
+        @include mixins.tablet {
+            padding: 8px 24px;
+
+            font-size: 13px;
+            line-height: 16px;
+        }
+    }
+
+    &__text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include mixins.tablet {
+            gap: 24px;
+        }
+
+        @include mixins.desktop {
+            display: grid;
+            gap: 0;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @include mixins.desktop-1200 {
+            gap: 97px;
+        }
+    }
+
+    &__title {
+        font-family: 'Great Vibes', cursive;
+        font-size: 46px;
+        font-weight: 400;
+        line-height: 52px;
+
+        @include mixins.tablet {
+            font-size: 72px;
+            line-height: 84px;
+        }
+    }
+
+    &__text {
+        @include mixins.text-t2;
+
+        @include mixins.tablet {
+            @include mixins.text-t1;
+        }
+    }
+
+    &__subtitle {
+        @include mixins.mob-title;
+
+        @include mixins.tablet {
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 48px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include mixins.pre-tablet {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @include mixins.desktop {
+            align-items: center;
+        }
+    }
+
+    &__disclaimer {
+        @include mixins.text2-mob;
+
+        text-align: right;
+
+        @include mixins.pre-tablet {
+            order: 2;
+        }
+
+        @include mixins.tablet {
+            @include mixins.text-t2;
+        }
+    }
+
+    &__disclaimer br {
+        @include mixins.desktop {
+            display: none;
+        }
+    }
+
+    &__btn {
+        text-align: center;
+
+        @include mixins.pre-tablet {
+            width: 100%;
+            max-width: 290px;
+        }
+
+        @include mixins.tablet {
+            width: auto;
+            max-width: unset;
+
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 26px;
+        }
+    }
+
+    &__pagination {
+        bottom: 0 !important;
+    }
+
+    @include mixins.tablet {
+        padding: 0 32px 20px !important;
+    }
+
+    @include mixins.desktop-1200 {
+        padding: 0 0 20px !important;
+    }
+}
