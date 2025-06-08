@@ -9,6 +9,7 @@
 @use './components/burger';
 @use './components/overlay';
 @use './components/btn';
+@use './components/slider';
 
 /* SECTIONS */
 @use './sections/header';
@@ -20,3 +21,4 @@
 @use './sections/our-studio';
 @use './sections/masseurs';
 @use './sections/types';
+@use './sections/hero';

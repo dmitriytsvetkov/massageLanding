@@ -26,6 +26,7 @@
     "dependencies": {
         "@maskito/core": "^3.7.2",
         "@maskito/kit": "^3.7.2",
-        "just-validate": "^4.3.0"
+        "just-validate": "^4.3.0",
+        "swiper": "^11.2.8"
     }
 }

@@ -1,0 +1,193 @@
+@use '@/styles/mixins';
+
+.slider {
+    &__item {
+        display: flex !important;
+        align-items: center;
+
+        min-height: 630px;
+
+        background-color: #00000052;
+        background-blend-mode: darken;
+
+        background-position: center top;
+        background-size: 300%;
+        background-repeat: no-repeat;
+
+        @include mixins.pre-tablet {
+            min-height: 500px;
+
+            background-size: 200%;
+        }
+
+        @include mixins.tablet {
+            min-height: 768px;
+        }
+
+        @include mixins.desktop {
+            background-position: center top;
+            background-size: 150% auto;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__item._first {
+        background-image: url('@/assets/img/hero-slider-bg-1.jpg');
+    }
+
+    &__item._second {
+        background-image: url('@/assets/img/hero-slider-bg-2.jpg');
+    }
+
+    &__item._third {
+        background-image: url('@/assets/img/hero-slider-bg-3.jpg');
+    }
+
+    &__item._fourth {
+        background-image: url('@/assets/img/hero-slider-bg-4.jpg');
+    }
+
+    &__item._fifth {
+        background-image: url('@/assets/img/hero-slider-bg-5.jpg');
+    }
+
+    &__item-content {
+        display: flex;
+
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+
+        padding-right: 16px;
+        padding-left: 16px;
+
+        @include mixins.pre-tablet {
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+
+        @include mixins.tablet {
+            padding-right: 32px;
+            padding-left: 32px;
+        }
+
+        @include mixins.desktop-1200 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+    }
+
+    &__item-title {
+        @include mixins.mob-title;
+
+        color: white;
+
+        @include mixins.pre-tablet {
+            @include mixins.h1-mob;
+
+            text-align: left;
+        }
+
+        @include mixins.tablet {
+            font-size: 36px;
+            line-height: 44px;
+        }
+
+        @include mixins.desktop {
+            font-size: 38px;
+            line-height: 48px;
+        }
+    }
+
+    &__item-text {
+        @include mixins.mob-title-2;
+
+        color: white;
+
+        @include mixins.pre-tablet {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        @include mixins.tablet {
+            font-size: 30px;
+            line-height: 36px;
+        }
+
+        @include mixins.desktop {
+            font-size: 30px;
+            line-height: 36px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-self: flex-start;
+    }
+
+    &__btn-prev,
+    &__btn-next {
+        display: none !important;
+
+        @include mixins.desktop-1200 {
+            display: flex !important;
+
+            width: 56px !important;
+            height: 56px !important;
+
+            border-radius: 28px;
+
+            color: white !important;
+
+            background: #ffffff3d;
+
+            &:after {
+                font-size: 16px !important;
+            }
+        }
+    }
+
+    &__btn-prev {
+        @include mixins.desktop-1200 {
+            left: 136px !important;
+        }
+    }
+
+    &__btn-next {
+        @include mixins.desktop-1200 {
+            right: 136px !important;
+        }
+    }
+
+    &__pagination {
+        bottom: 150px !important;
+        left: 16px !important;
+
+        text-align: left !important;
+
+        @include mixins.pre-tablet {
+            bottom: 135px !important;
+            left: 24px !important;
+        }
+
+        @include mixins.tablet {
+            bottom: 200px !important;
+            left: 32px !important;
+        }
+
+        @include mixins.desktop {
+            bottom: 230px !important;
+        }
+
+        @include mixins.desktop-1200 {
+            left: unset !important;
+
+            text-align: center !important;
+        }
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background: #09001652 !important;
+}
