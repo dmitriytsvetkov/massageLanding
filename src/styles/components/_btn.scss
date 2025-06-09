@@ -26,5 +26,21 @@
             font-size: 20px;
             line-height: 26px;
         }
+
+        &:hover,
+        &:focus {
+            background-color: transparent;
+            opacity: 0.7;
+        }
+    }
+
+    &:hover,
+    &:focus {
+        background-color: #752d9c;
+    }
+
+    @include mixins.tablet {
+        font-size: 20px;
+        line-height: 26px;
     }
 }
