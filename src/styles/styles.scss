@@ -11,6 +11,7 @@
 @use './components/btn';
 @use './components/hero-slider';
 @use './components/promo-slider';
+@use './components/tabs';
 
 /* SECTIONS */
 @use './sections/header';
@@ -24,3 +25,4 @@
 @use './sections/types';
 @use './sections/hero';
 @use './sections/promo';
+@use './sections/services';

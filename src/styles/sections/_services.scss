@@ -1,0 +1,178 @@
+@use '@/styles/mixins';
+
+.services {
+    &__title {
+        @include mixins.mob-title;
+
+        margin-bottom: 8px;
+
+        text-align: center;
+
+        @include mixins.tablet {
+            margin-bottom: 24px;
+
+            font-size: 38px;
+            line-height: 46px;
+        }
+
+        @include mixins.desktop {
+            text-align: left;
+        }
+
+        @include mixins.desktop-1200 {
+            margin-bottom: 60px;
+
+            font-size: 40px;
+            line-height: 48px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__item-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @include mixins.tablet {
+            padding: 16px 24px;
+        }
+
+        @include mixins.desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__item-header {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__item-title {
+        font-family: 'Wix Madefor Text', Arial, sans-serif;
+        font-size: 17px;
+        line-height: 22px;
+
+        @include mixins.tablet {
+            font-family: 'Wix Madefor Display', Arial, sans-serif;
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
+
+    &__item-description {
+        @include mixins.text-mob;
+
+        display: -webkit-box;
+
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+
+        @include mixins.tablet {
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__item._expanded &__item-description {
+        display: block;
+        -webkit-line-clamp: none;
+
+        max-height: none;
+    }
+
+    &__item-toggle-btn {
+        @include mixins.text-mob;
+
+        margin: 0;
+        padding: 0;
+
+        border: none;
+
+        text-align: left;
+        color: #999;
+
+        background: transparent;
+
+        cursor: pointer;
+
+        @include mixins.tablet {
+            font-family: 'Wix Madefor Display', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__item-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+
+        @include mixins.desktop {
+            justify-content: flex-end;
+            align-items: flex-start;
+            gap: 22px;
+        }
+    }
+
+    &__item-price-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        @include mixins.tablet {
+            gap: 10px;
+        }
+    }
+
+    &__item-duration {
+        @include mixins.text-mob;
+
+        color: #000;
+
+        @include mixins.tablet {
+            font-size: 20px;
+            line-height: 25px;
+        }
+    }
+
+    &__item-price {
+        @include mixins.mob-title-2;
+
+        @include mixins.tablet {
+            font-size: 24px;
+            line-height: 30px;
+        }
+    }
+
+    &__disclaimer {
+        margin-bottom: 16px;
+        padding: 0 24px;
+
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    @include mixins.desktop {
+        margin: 0 32px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    @include mixins.desktop-1200 {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0;
+    }
+}

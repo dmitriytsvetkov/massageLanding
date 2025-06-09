@@ -1,3 +1,5 @@
+@use '@/styles/mixins';
+
 .btn {
     margin: 0;
     padding: 16px 32px;
@@ -12,4 +14,17 @@
     color: white;
 
     background-color: var(--color-violet);
+
+    &._outline {
+        border: 2px solid var(--color-violet);
+
+        color: var(--text);
+
+        background-color: transparent;
+
+        @include mixins.tablet {
+            font-size: 20px;
+            line-height: 26px;
+        }
+    }
 }

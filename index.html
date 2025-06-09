@@ -343,13 +343,13 @@
                             </div>
                             <div class="types__content">
                                 <h3 class="types__name">Лечебный</h3>
-                                <p class="types__text">
+                                <p class="types__text" data-field="text">
                                     Класический массаж: общий массаж; массаж спины, поясничной области, воротниковой
                                     зоны, шейно-воротниковой зоны; массаж лица; массаж волосистой части головы; массаж
                                     волосистой части головы и лица; массаж грудной клетки; массаж живота; массаж рук;
                                     массаж кистей; массаж ног; массаж стоп.
                                 </p>
-                                <button class="types__toggle-btn">Подробнее</button>
+                                <button class="types__toggle-btn" data-field="toggle-btn">Подробнее</button>
                             </div>
                         </li>
                         <li class="types__item" data-field="expanded">
@@ -363,8 +363,10 @@
                             </div>
                             <div class="types__content">
                                 <h3 class="types__name">Детский массаж</h3>
-                                <p class="types__text">Детский массаж: лечебный, коррекционный, профилактический;</p>
-                                <button class="types__toggle-btn">Подробнее</button>
+                                <p class="types__text" data-field="text">
+                                    Детский массаж: лечебный, коррекционный, профилактический;
+                                </p>
+                                <button class="types__toggle-btn" data-field="toggle-btn">Подробнее</button>
                             </div>
                         </li>
                         <li class="types__item" data-field="expanded">
@@ -378,15 +380,79 @@
                             </div>
                             <div class="types__content">
                                 <h3 class="types__name">Аппаратный</h3>
-                                <p class="types__text">
+                                <p class="types__text" data-field="text">
                                     Коррекция фигуры (Ультрозвуковая кавитация; биофотон; горячий вакум; RF-лифтинг
                                     лица; RF-лифтинг тела.) Антицеллюлитный массаж; лимфодренажный; массаж живота после
                                     родов.
                                 </p>
-                                <button class="types__toggle-btn">Подробнее</button>
+                                <button class="types__toggle-btn" data-field="toggle-btn">Подробнее</button>
                             </div>
                         </li>
                     </ul>
+                </div>
+            </section>
+
+            <section class="services">
+                <h2 class="services__title">Услуги и цены</h2>
+
+                <div class="swiper tabs-swiper services__tabs tabs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide tabs__tab">
+                            <div class="tabs__container">Детский масаж</div>
+                        </div>
+                        <div class="swiper-slide tabs__tab">
+                            <div class="tabs__container">Аппаратный массаж</div>
+                        </div>
+                        <div class="swiper-slide tabs__tab">
+                            <div class="tabs__container">Лечебный массаж</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper content-swiper tabs__content-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="services__disclaimer">
+                                10-40 минут.<br />
+                                Время массажа зависит от возраста ребенка
+                            </div>
+                            <div class="services__list">
+                                <div class="services__item" data-field="expanded" data-expanded-alt>
+                                    <div class="services__item-container">
+                                        <div class="services__item-header">
+                                            <h4 class="services__item-title">
+                                                Общий массаж медицинский ( у детей от 3-х до 15 лет)
+                                            </h4>
+                                            <p class="services__item-description" data-field="text">
+                                                Лечебный массаж - это терапевтический метод оздоровления организма,
+                                                оказывающий непосредственное влияние на обмен веществ и все системы
+                                                организма: мышечную, нервную, является эффективным методом лечения
+                                                различных травм и заболеваний.
+                                            </p>
+                                            <button class="services__item-toggle-btn" data-field="toggle-btn">
+                                                Подробнее
+                                            </button>
+                                        </div>
+                                        <div class="services__item-footer">
+                                            <div class="services__item-price-wrapper">
+                                                <span class="services__item-duration">40 минут</span>
+                                                <span class="services__item-price">1 350 ₽</span>
+                                            </div>
+                                            <a href="#" class="services__item-btn btn _outline">Записаться</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <!-- контент таба 2 -->
+                            <p>Содержание для «Аппаратного массажа»…</p>
+                        </div>
+                        <div class="swiper-slide">
+                            <!-- контент таба 3 -->
+                            <p>Содержание для «SPA-ритуалов»…</p>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="masseurs">

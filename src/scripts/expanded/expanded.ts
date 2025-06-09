@@ -7,18 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyClamp() {
         const linesToShow = mq.matches ? 7 : 3
 
-        items.forEach((typeItem) => {
-            const textEl = typeItem.querySelector<HTMLElement>('.types__text')
-            const btn = typeItem.querySelector<HTMLButtonElement>('.types__toggle-btn')
+        items.forEach((item) => {
+            const textEl = item.querySelector<HTMLElement>('[data-field="text"]')
+            const btn = item.querySelector<HTMLButtonElement>('[data-field="toggle-btn"]')
+
             if (!textEl || !btn) return
 
             textEl.style.maxHeight = ''
             textEl.style.overflow = ''
-            typeItem.classList.remove('_expanded')
             btn.textContent = 'Подробнее'
 
             const lineHeight = parseFloat(getComputedStyle(textEl).lineHeight)
-            const threshold = lineHeight * linesToShow
+            const threshold =
+                lineHeight * (item.dataset.expandedAlt !== undefined ? 1 : linesToShow)
 
             if (textEl.scrollHeight > threshold) {
                 btn.style.display = ''
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!listenedBtns.has(btn)) {
                 btn.addEventListener('click', (e) => {
                     e.preventDefault()
-                    const expanded = typeItem.classList.toggle('_expanded')
+                    const expanded = item.classList.toggle('_expanded')
                     if (expanded) {
                         textEl.style.maxHeight = ''
                         textEl.style.overflow = ''

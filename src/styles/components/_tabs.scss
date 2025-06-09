@@ -1,0 +1,65 @@
+@use '@/styles/mixins';
+
+.tabs {
+    margin-bottom: 16px;
+
+    &__tab {
+        @include mixins.mob-title-2;
+
+        flex-shrink: 0;
+
+        padding: 24px 24px 4px;
+
+        text-align: center;
+        white-space: nowrap;
+
+        cursor: pointer;
+
+        @media screen and (max-width: 1023px) {
+            width: auto !important;
+        }
+
+        @include mixins.tablet {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        @include mixins.desktop {
+            padding: 0;
+        }
+
+        @include mixins.desktop-1200 {
+            font-size: 28px;
+            line-height: 35px;
+        }
+    }
+
+    &__container {
+        margin: 0 auto;
+        padding: 0 4px;
+
+        border-bottom: 4px solid transparent;
+
+        transition: border-color 0.2s;
+
+        @include mixins.desktop {
+            width: fit-content;
+        }
+    }
+
+    &__content-slider {
+        margin: 0 24px !important;
+
+        @include mixins.desktop {
+            margin: 0 !important;
+        }
+    }
+
+    @include mixins.tablet {
+        margin-bottom: 32px;
+    }
+}
+
+.tabs-swiper .swiper-slide-active .tabs__container {
+    border-color: var(--color-violet);
+}
