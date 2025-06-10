@@ -1,0 +1,51 @@
+@use '@/styles/mixins';
+
+.field {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    &__input {
+        @include mixins.text-t3;
+
+        width: 100%;
+        padding: 18px 16px;
+
+        border: 1.5px solid #e2e3ea;
+        border-radius: 16px;
+
+        color: var(--text);
+
+        background-color: white;
+
+        &::placeholder {
+            @include mixins.text-t3;
+
+            color: #9aa1ae;
+        }
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+
+    &__input {
+        min-height: 56px;
+
+        &._error {
+            border-color: red;
+        }
+    }
+
+    &__error {
+        bottom: -16px;
+    }
+
+    &__error-text {
+        margin-top: 4px;
+
+        color: red;
+    }
+}

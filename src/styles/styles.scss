@@ -12,6 +12,10 @@
 @use './components/hero-slider';
 @use './components/promo-slider';
 @use './components/tabs';
+@use './components/modal';
+@use './components/feedback-form';
+@use './components/field';
+@use './components/select';
 
 /* SECTIONS */
 @use './sections/header';

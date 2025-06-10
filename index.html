@@ -23,7 +23,7 @@
                         <p class="header__info-text">Работаем ежедневно 09:00 - 20:00</p>
                         <p class="header__info-text">Возможен выезд на дом</p>
                     </div>
-                    <button class="burger__btn btn _tablet">Записаться</button>
+                    <button class="burger__btn btn _tablet" data-field="show-form-modal">Записаться</button>
                     <button
                         class="actions__burger burger"
                         data-field="burger"
@@ -36,7 +36,7 @@
 
                 <div class="burger__content" data-field="burger-content">
                     <div class="burger__wrapper">
-                        <button class="burger__btn btn _mobile">Записаться</button>
+                        <button class="burger__btn btn _mobile" data-field="show-form-modal">Записаться</button>
                         <div class="burger__info">
                             <p class="burger__info-text">Работаем ежедневно 09:00 - 20:00</p>
                             <p class="burger__info-text">Возможен выезд на дом</p>
@@ -86,7 +86,7 @@
                                     Студия коррекции фигуры и медицинского массажа для взрослых и детей «Мой массаж»
                                 </h2>
                                 <p class="hero-slider__item-text">Чувствуй себя лучше с каждыйм посещением</p>
-                                <a href="#" class="hero-slider__btn btn">Записаться</a>
+                                <a href="#" class="hero-slider__btn btn" data-field="show-form-modal">Записаться</a>
                             </div>
                         </div>
                         <div class="hero-slider__item _second swiper-slide">
@@ -94,14 +94,14 @@
                                 <h2 class="hero-slider__item-title">
                                     Профессиональный массаж в Чите для взрослых и детей
                                 </h2>
-                                <a href="#" class="hero-slider__btn btn">Записаться</a>
+                                <a href="#" class="hero-slider__btn btn" data-field="show-form-modal">Записаться</a>
                             </div>
                         </div>
                         <div class="hero-slider__item _third swiper-slide">
                             <div class="hero-slider__item-content">
                                 <h2 class="hero-slider__item-title">Детский массаж</h2>
                                 <p class="hero-slider__item-text">Мы занимаемся массажем для детей от 0 лет</p>
-                                <a href="#" class="hero-slider__btn btn">Записаться</a>
+                                <a href="#" class="hero-slider__btn btn" data-field="show-form-modal">Записаться</a>
                             </div>
                         </div>
                         <div class="hero-slider__item _fourth swiper-slide">
@@ -110,7 +110,7 @@
                                 <p class="hero-slider__item-text">
                                     Коррекция фигуры, лимфодренажный массаж, массаж живота после родов
                                 </p>
-                                <a href="#" class="hero-slider__btn btn">Записаться</a>
+                                <a href="#" class="hero-slider__btn btn" data-field="show-form-modal">Записаться</a>
                             </div>
                         </div>
                         <div class="hero-slider__item _fifth swiper-slide">
@@ -119,7 +119,7 @@
                                 <p class="hero-slider__item-text">
                                     У нас действуют различные акции на массаж, подробнее в разделе Акции
                                 </p>
-                                <a href="#" class="hero-slider__btn btn">Записаться</a>
+                                <a href="#" class="hero-slider__btn btn" data-field="show-form-modal">Записаться</a>
                             </div>
                         </div>
                     </div>
@@ -438,7 +438,12 @@
                                                 <span class="services__item-duration">40 минут</span>
                                                 <span class="services__item-price">1 350 ₽</span>
                                             </div>
-                                            <a href="#" class="services__item-btn btn _outline">Записаться</a>
+                                            <a
+                                                href="#"
+                                                class="services__item-btn btn _outline"
+                                                data-field="show-form-modal"
+                                                >Записаться</a
+                                            >
                                         </div>
                                     </div>
                                 </div>
@@ -539,7 +544,9 @@
                                         >*Скидка не суммируется<br />
                                         с другими акциями</span
                                     >
-                                    <a href="#" class="promo-slider__btn btn">Записаться по акции</a>
+                                    <a href="#" class="promo-slider__btn btn" data-field="show-form-modal"
+                                        >Записаться по акции</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -564,7 +571,9 @@
                                         >*Скидка не суммируется<br />
                                         с другими акциями</span
                                     >
-                                    <a href="#" class="promo-slider__btn btn">Записаться по акции</a>
+                                    <a href="#" class="promo-slider__btn btn" data-field="show-form-modal"
+                                        >Записаться по акции</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -589,7 +598,9 @@
                                         >*Скидка не суммируется<br />
                                         с другими акциями</span
                                     >
-                                    <a href="#" class="promo-slider__btn btn">Записаться по акции</a>
+                                    <a href="#" class="promo-slider__btn btn" data-field="show-form-modal"
+                                        >Записаться по акции</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -614,7 +625,9 @@
                                         >*Скидка не суммируется<br />
                                         с другими акциями</span
                                     >
-                                    <a href="#" class="promo-slider__btn btn">Записаться по акции</a>
+                                    <a href="#" class="promo-slider__btn btn" data-field="show-form-modal"
+                                        >Записаться по акции</a
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -803,6 +816,82 @@
                 </p>
             </div>
         </footer>
+
+        <div class="modal _visible" data-field="modal">
+            <div class="modal__container">
+                <button class="modal__close" data-field="modal-close">
+                    <svg
+                        class="modal__close-icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path d="M15.0001 1L1.00012 15" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M15 15L1 1" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                </button>
+                <h3 class="modal__title">Записаться на массаж</h3>
+
+                <form action="#" class="modal__form feedback-form" data-field="feedback-form">
+                    <label class="field feedback-form__name-field" data-field="name-field" data-id="field">
+                        <input
+                            class="field__input"
+                            type="text"
+                            data-field="name-input"
+                            name="name"
+                            placeholder="Ваше Имя"
+                            data-id="field-input"
+                        />
+                        <div class="field__error" data-field="name-error"></div>
+                    </label>
+                    <label class="field feedback-form__phone-field" data-field="phone-field" data-id="field">
+                        <input
+                            class="field__input"
+                            type="tel"
+                            data-id="field-input"
+                            data-field="phone-input"
+                            name="phone"
+                            placeholder="Номер телефона"
+                        />
+                        <div class="field__error" data-field="phone-error"></div>
+                    </label>
+
+                    <div class="field _select select">
+                        <div class="select__container" data-field="select-container">
+                            <span class="select__selected" data-selected>Массаж</span>
+                            <svg
+                                class="select__arrow"
+                                width="24"
+                                height="25"
+                                viewBox="0 0 24 25"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M19 9L12 16L5 9"
+                                    stroke="#9AA1AE"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                            <div class="select__options _hidden">
+                                <div class="select__option" data-value="1">Лечебный</div>
+                                <div class="select__option" data-value="2">Детский</div>
+                                <div class="select__option" data-value="3">Аппаратный</div>
+                            </div>
+                            <input type="hidden" name="type" data-field="type-select" />
+                        </div>
+
+                        <div class="field__error" data-field="type-error"></div>
+                    </div>
+
+                    <button class="feedback-form__btn btn" data-text-slide>Записаться</button>
+                </form>
+            </div>
+        </div>
 
         <script src="./src/scripts/main.ts" type="module"></script>
         <div class="overlay" data-field="overlay" hidden></div>
