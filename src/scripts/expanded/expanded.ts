@@ -36,11 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (expanded) {
                         textEl.style.maxHeight = ''
                         textEl.style.overflow = ''
-                        btn.style = 'display: none'
+                        btn.style.display = 'none'
                     } else {
                         textEl.style.maxHeight = `${threshold}px`
                         textEl.style.overflow = 'hidden'
-                        btn.style = 'display: none'
+                        btn.style.display = 'none'
                     }
                 })
                 listenedBtns.add(btn)
