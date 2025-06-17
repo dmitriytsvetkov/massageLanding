@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig(({ mode }) => {
     return {
+        base: '',
         plugins: [],
         resolve: {
             alias: {
@@ -40,6 +41,10 @@ export default defineConfig(({ mode }) => {
 
                         if (/\.js$/.test(name ?? '')) {
                             return 'scripts/[name][extname]'
+                        }
+
+                        if (/\.(png|jpg|jpeg|gif|svg|webp|avif|ico)$/.test(name ?? '')) {
+                            return 'img/[name][extname]'
                         }
 
                         return 'assets/[name][extname]'

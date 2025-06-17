@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if ($form) {
-        console.log($form)
         const validation = new JustValidate($form, {
             errorFieldCssClass: '_error',
             errorFieldStyle: {},
