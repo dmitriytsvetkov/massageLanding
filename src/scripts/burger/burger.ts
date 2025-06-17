@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const target = e.target as HTMLElement
 
         if (
-            !$burgerContent?.contains(target) &&
+            $burgerContent?.contains(target) &&
             !$burger?.contains(target) &&
             $burgerContent?.classList.contains('_visible')
         ) {
