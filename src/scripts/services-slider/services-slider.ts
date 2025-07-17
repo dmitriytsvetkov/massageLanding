@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modules: [Controller],
         slidesPerView: 1,
         allowTouchMove: false,
+        autoHeight: true,
     })
 
     tabsSwiper.controller.control = contentSwiper
