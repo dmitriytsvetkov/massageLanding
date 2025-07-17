@@ -1,9 +1,9 @@
 import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
 document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.hero-slider', {
-        modules: [Navigation, Pagination],
+        modules: [Navigation, Pagination, Autoplay],
         loop: true,
         slidesPerView: 1,
         spaceBetween: 4,
@@ -15,5 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
             el: '.swiper-pagination',
             clickable: true,
         },
+        autoplay: true,
     })
 })
