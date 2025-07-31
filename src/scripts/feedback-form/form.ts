@@ -2,6 +2,15 @@ import { default as JustValidate, Rules } from 'just-validate'
 import { Maskito } from '@maskito/core'
 import { masks } from '@/lib'
 
+declare global {
+    interface Window {
+        FBH?: {
+            ajax_url?: string
+            nonce?: string
+        }
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const $form = document.querySelector<HTMLFormElement>('[data-field="feedback-form"')
 
@@ -17,6 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         type: {
             error: '[data-field="feedback-form"] [data-field="type-error"]',
             select: '[data-field="feedback-form"] [data-field="type-select"]',
+        },
+        checkbox: {
+            error: '[data-field="feedback-form"] [data-field="agree-error"]',
+            checkbox: '[data-field="feedback-form"] [data-field="agree-checkbox"]',
         },
     }
 
@@ -40,6 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 {
                     errorFieldStyle: '',
                     errorsContainer: formFields.name.error,
+                }
+            )
+            .addField(
+                formFields.checkbox.checkbox,
+                [
+                    {
+                        errorMessage: 'Вы должны принять условия',
+                        rule: Rules.Required,
+                    },
+                ],
+                {
+                    errorFieldStyle: '',
+                    errorsContainer: formFields.checkbox.error,
                 }
             )
             .addField(
@@ -72,7 +98,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             )
             .onSuccess(() => {
-                console.log('success')
+                const ajaxUrl = window.FBH?.ajax_url
+                const nonce = window.FBH?.nonce
+
+                const form = document.querySelector<HTMLFormElement>('[data-field="feedback-form"]')
+
+                if (form && ajaxUrl && nonce) {
+                    const data = {
+                        name:
+                            form.querySelector<HTMLInputElement>('[name="name"]')?.value?.trim() ??
+                            '',
+                        phone:
+                            form.querySelector<HTMLInputElement>('[name="phone"]')?.value.trim() ??
+                            '',
+                        type:
+                            form.querySelector<HTMLInputElement>('[name="type"]')?.value.trim() ??
+                            '',
+                        nonce: nonce,
+                        action: 'submit_feedback',
+                    }
+
+                    fetch(ajaxUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                        },
+                        body: new URLSearchParams(data),
+                    })
+                        .then((res) => res.json())
+                        .then((json) => {
+                            if (json.success) {
+                                alert(json.data) // “Спасибо! …”
+                                form.reset()
+                                // тут можно закрыть модалку, обнулить кастомный select и т.д.
+                            } else {
+                                alert('Ошибка: ' + json.data)
+                            }
+                        })
+                        .catch(() => {
+                            alert('Сетевая ошибка')
+                        })
+                }
             })
 
         const select = document.querySelector<HTMLElement>('[data-field="select-container"]')

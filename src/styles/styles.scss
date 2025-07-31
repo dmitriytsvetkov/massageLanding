@@ -16,6 +16,7 @@
 @use './components/feedback-form';
 @use './components/field';
 @use './components/select';
+@use './components/checkbox';
 
 /* SECTIONS */
 @use './sections/header';
@@ -30,3 +31,4 @@
 @use './sections/hero';
 @use './sections/promo';
 @use './sections/services';
+@use './sections/msp';

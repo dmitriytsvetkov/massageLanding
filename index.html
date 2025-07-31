@@ -817,6 +817,18 @@
             </div>
         </footer>
 
+        <section class="msp">
+            <div class="msp__container container">
+                <div class="msp__logo-container">
+                    <img src="./src/assets/img/msp_logo.png" alt="MSP Logo" class="msp__logo" width="111" height="60" />
+                </div>
+                <a class="msp__link" href="https://мойбизнес75.рф/">
+                    Подготовлено при поддержке<br />
+                    Центра предпринимательства «Мой бизнес»
+                </a>
+            </div>
+        </section>
+
         <div class="modal _visible" data-field="modal">
             <div class="modal__container">
                 <button class="modal__close" data-field="modal-close">
@@ -887,6 +899,19 @@
 
                         <div class="field__error" data-field="type-error"></div>
                     </div>
+
+                    <label class="checkbox">
+                        <input type="checkbox" data-field="agree-checkbox" />
+                        <span class="checkbox__checkmark"></span>
+                        <span class="checkbox__text">
+                            <span class="checkbox__text-text">
+                                Нажимая "Записаться" я соглашаюсь на обработку
+                                <a href="#" class="checkbox__link">персональных данных</a>
+                            </span>
+                        </span>
+
+                        <div class="field__error" data-field="agree-error" style="display: none"></div>
+                    </label>
 
                     <button class="feedback-form__btn btn" data-text-slide>Записаться</button>
                 </form>
